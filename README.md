@@ -60,17 +60,17 @@
 1. 运行web服务器  
 写好代码之后，在CloudGo目录下，输入`go install`。然后在gowork/bin目录下输入'CloudGo'，启动服务器，终端显示在8080端口监听http链接请求。这时，打开浏览器，进入localhost:8080（默认8080端口启动服务），可以看到如下结果。  
 浏览器进入localhost:8080后，终端显示接收到一个GET方法，并返回HTTP状态码200，表示OK，请求成功。  
-![run_server][https://github.com/sysuxwh/CloudGo/blob/master/pic/runServer.png]
+![run_server](https://github.com/sysuxwh/CloudGo/blob/master/pic/runServer.png)  
 手动输入参数，将服务端口改为9999，再次启动服务器，运行结果如下：  
-![run_server2][https://github.com/sysuxwh/CloudGo/blob/master/pic/runServer_2.png]
+![run_server2](https://github.com/sysuxwh/CloudGo/blob/master/pic/runServer_2.png)  
 除了状态码200外，还收到了一个404状态码，表示找不到favicon.ico(网页图标/url图标)
 
 2. curl工具测试  
 curl是一个控制台程序，可以精确控制 HTTP 请求的每一个细节。配合 shell 程序可以简单、重复给服务器发送不同的请求序列，调试程序或分析输出。另外，curl 是 linux 系统自带的命令行工具。  
 另外打开一个终端机，输入命令`curl -v localhost:8080`（服务器在8080端口监听http链接请求），会出现以下信息，显示成功访问localhost:8080。  
-![curl][https://github.com/sysuxwh/CloudGo/blob/master/pic/curl.png]
+![curl](https://github.com/sysuxwh/CloudGo/blob/master/pic/curl.png)
 
 3. ab工具压力测试  
 首先安装 Apache web 压力测试程序，在终端中输入`yum -y install httpd-tools`即可。  
 确保服务器在8080端口监听http链接请求，然后输入命令`ab -n 1000 -c 100 localhost:8080/`（不要漏了最后的/），测试结果如下图——所有请求均接收到了。  
-![test][https://github.com/sysuxwh/CloudGo/blob/master/pic/ab.png]
+![test](https://github.com/sysuxwh/CloudGo/blob/master/pic/ab.png)
